@@ -1,0 +1,32 @@
+NPM dependency:- There are two types of dependency in npm packges first is dev dependecy and 2nd is normal or prod dependency. we need dev dependency only while developing the project.
+
+NPX:- executing a package eg- npx parcel index.html
+
+parcel:- parcek is bundler and we it use dto buldled the app. following feature it hs>>
+Dev build
+create local server
+HMR = hot module replacment (refresh page on chnage)
+file watching algo- written in c++
+caching- by caching giving faster builds
+Image optimisation - minification files
+boundling
+compressing - removes  all white spaces like things
+consistence hashing
+code splitting
+differential bundling - gives older browser support
+dignojstic - show error in beautiful error terminal
+erro handling
+https - support to host on ssl on dev server also
+tree shaking - remove unused code for you
+differnt dev and prod bundle
+
+
+^ vs ~ (caret vs tild): when we use caret with np  version installing it will only update minor version of that npm packgae but using tild(~) updates only major version;
+it always safe to use caret(^) beacause major update cause break our application
+
+
+package.json vs package.json.lock:.json approx version of npm package and json.lock keep exact version of npm package
+
+node_modules:- contains all the code of installed npm packages and its work like transitive dependecy that  means suppose if i install parcel and its has own dependecy and that parcel's dependency also has own dependency these kind of things called transitive  dependency
+
+browserlist tool- its a vey good package ust explore this. we can define how many browser runs with versions and which browser eg: https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z 
