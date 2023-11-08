@@ -1,0 +1,9 @@
+1. Whenever you write a html which can reuse or going inside loop then we have to make a separate component.
+
+2. config driven ui - if website is driven by data this is know as config driven ui suppose if delhi has diffrent data, and mumbai has diffennret then we didnot make seprate website for these region we achieve the solution for this problem by using config driven ui
+how ui look like by using data or using config and this config came from backend
+note - my treadmap develop using config driven ui
+
+3. key - in react looping/map always use key beacause without key react rerender all the things inside a loop when list modified but if we used key then every element uniquly identified so only newly added element is rerender in list not all thats why we'll alwayshave to use key.
+note - react itself says dont use index as a key try to unique id from api data use index only that condition if api da6a does't have unique key
+not using keys(not acceptable) <<<<<index as key <<<<<< unique id(best practise)
