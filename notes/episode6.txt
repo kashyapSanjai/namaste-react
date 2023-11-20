@@ -1,0 +1,26 @@
+monolith - written all code in same project like
+    a.backend application
+    b.ui
+    c.auth
+    d.db connection
+    e. sms sending
+    f. email notification
+in monolith apps if we make single changes like change only button color so we also have to complie/deploywhole project
+
+
+microservices - in this architecture we have different serviced for different job
+    a.backend application
+    b.ui
+    c.auth
+    d.db connection
+    e. sms sending
+    f. email notification
+all above  small services Combined together form a big app all the microservice talk each other depending upon use cases also called it 'separation of concerns' and every project/services has different job and every service can be written in different language like bacjend in other language frontend in other 
+que - how these service interact each other and deployed?
+ans - all serviced deployed on different port but with same domain/url
+
+note - incomparison of monolith apps microservices has different deplyment process for different services
+
+useEffect - when the component rendered it and as soon as rendered  cycle is finished it will call this callback function
+
+whenever state variable changes/update then react triggers a reconciliation cycle(re-renders the component) react re-rendring whole component but react only update where value where its requires(chnaged value) 

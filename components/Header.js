@@ -1,6 +1,10 @@
+import { useState } from "react";
 import {HEADER_LOGO} from "../utility/constants"
 
 const Header = () => {
+const [buttonText, setButtontext] = useState("Login");
+
+
     return (
       <div className="header">
         <div className="logo-container">
@@ -15,6 +19,7 @@ const Header = () => {
             <li>About</li>
             <li>Contact us</li>
             <li>Cart</li>
+            <button type="button" className="auth-button">{buttonText}</button>
           </ul>
         </div>
       </div>
