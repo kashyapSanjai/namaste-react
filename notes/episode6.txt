@@ -22,5 +22,13 @@ ans - all serviced deployed on different port but with same domain/url
 note - incomparison of monolith apps microservices has different deplyment process for different services
 
 useEffect - when the component rendered it and as soon as rendered  cycle is finished it will call this callback function
+after every render of component useeffect called
+    a.if no depenedecy array it call on every component rendered 
+    b.if empty depenedecy array then useeffect called on initial render only once when component rendered first time
+    c. if having depenedecy then it called every time when depenedecy changed
+
+useState - it is use to create local state variable inside your functional components
+
+note - dont create useState inside if/else or for loop
 
 whenever state variable changes/update then react triggers a reconciliation cycle(re-renders the component) react re-rendring whole component but react only update where value where its requires(chnaged value) 
