@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-import { RouterProvider } from "react-router-dom";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
+import RestaurantsMenu from "./components/RestaurantsMenu";
 
 
 
@@ -31,18 +31,11 @@ import ErrorPage from "./components/ErrorPage";
  */
 
 
-
-
-
-
-
-
-
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body/>
+      <Outlet/>
     </div>
   );
 };
@@ -51,11 +44,21 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    children:[
+      {
+        path: "/",
+        element: <Body/>
+      },
+      {
+        path: "/contact-us",
+        element: <Contact/>
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantsMenu/>
+      }
+    ],
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/contact-us",
-    element: <Contact />,
   },
 ]);
 

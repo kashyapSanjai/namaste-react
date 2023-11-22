@@ -1,0 +1,4 @@
+server side route - if we use anchor tag and paass url/link into anchor tag called server side rout beacause clicking on anchor tag it go to the network with added url
+
+client side route - if we use link  componet which provided by  react router dom and it only replcae componet with desired route instead of loadignwhole page that's react called single page applicationgit 
+
