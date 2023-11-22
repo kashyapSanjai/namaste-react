@@ -16,18 +16,18 @@ class MemberClass extends React.Component{
     }
     async componentDidMount(){
         console.log(this.props.name+" child didMount running");
-        // let data = await fetch("https://api.github.com/users/kashyapsanjai");
-        // let json = await data.json();
-        // this.setState({
-        //     userInfo:json
-        // })
+        let data = await fetch("https://api.github.com/users/kashyapsanjai");
+        let json = await data.json();
+        this.setState({
+            userInfo:json
+        })
         this.timer = setInterval(() => {
             console.log("interval running");
         }, 1000);
-        // console.log(json);
+        console.log(json);
         
     }
-    
+
     componentDidUpdate(prevProps,prevState){
         if(this.state.count!==prevState.count){
             console.log("count chnaged")
