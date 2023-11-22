@@ -17,8 +17,8 @@ class About extends React.Component{
                 <h2>This is About component</h2>
                 {/* <Member /> */}
                 <MemberClass name={"sanjay (Class)"} location = {"lucknow (Class)"}/>
-                <MemberClass name={"ajay (Class)"} location = {"punjab (Class)"}/>
-                <MemberClass name={"vijay (Class)"} location = {"Delhi (Class)"}/>
+                {/* <MemberClass name={"ajay (Class)"} location = {"punjab (Class)"}/>
+                <MemberClass name={"vijay (Class)"} location = {"Delhi (Class)"}/> */}
             </div>
         )
     }

@@ -6,4 +6,42 @@ Class component lifecycle - it has 2 phase for class component life cycle
         - Render phase - basically in this phase  analyze new props ,state and find difference previou props and state (constructor and render method comes in this phase)
         - commit phase - in tis phase we update DOM (componentDidMount etc comes)
 
+React class component lifecycle priorty with nested component
+--------------------------------------
+1.parent component
+- constructor
+- render
+    if child 1 component
+        - constructor
+        - render
+    if child 2 component
+        - constructor
+        - render
+    child component Did mount
+        - child 1 component did mount 
+        - child 2 component did mount 
+2.parent component Did mount
+
+3.componentDidMount
+4.componentWillUnMount
+
+
+
+
+React Functional Component life cycle
+-----------------------------------------
+useEffect(()=>{
+    console.log("trigger when component didmount initialy")
+},[])
+
+useEffect(()=>{
+    console.log("trigger when dependency update")
+},[state])
+
+useEffect(()=>{
+    return()=>{
+        console.log("trigger when component removed")
+    }
+},[])
+
 
