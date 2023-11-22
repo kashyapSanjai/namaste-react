@@ -23,8 +23,8 @@ useEffect(()=>{
 const fetchData = async ()=>{
   const data = await fetch(RESTAURANT_LIST);
   const json = await data.json();
-  setRestaurantList(json.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  setFilteredRestaurantList(json.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  setRestaurantList(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  setFilteredRestaurantList(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 }
 
     if(restaurantList?.length===0)return <Simmer/>;
