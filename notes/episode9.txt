@@ -1,0 +1,20 @@
+every component should have a single responsibilty which make our component 
+- most readable 
+- most maintainable 
+- most testable 
+
+custom hooks - we can create custom hooks that function which  written some react code inside that custom hooks and return some value, its recomnded that always use custom hook using 'use' prefix suppose if we did not use then it will not trhow error but in in linting(ESLint) process it will give error
+
+
+for developing large scale app - if we will not optimise then loading time too much increaes so you have to break your app into smaller pieces in smaller js files
+
+we ll try to breakdown our app in  smaller bundels of files this process known as 
+  - chunking
+  - code splitting
+  - dynamic loading
+  - lazy loading 
+  - on Demand loading
+  - dynamic importer
+note - all above names are same 
+
+for achieve above functionality we will use lazy function and SUSPENSE component which is given by React. so we will import  module with different way by using lazy method so every time our bundler bundled  only required component not all the components so the app bundle size reduce and our app become faster these whole process called lazy loading or chunking or dynamix loading etc.. so every large application its mandatory to use lazy loading. 

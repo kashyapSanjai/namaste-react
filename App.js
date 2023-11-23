@@ -1,4 +1,4 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,10 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantsMenu from "./components/RestaurantsMenu";
+import useOnlineStatus from "./utility/useOnlineStatus";
+// import Grocery from "./components/Grocery";
+const Grocery = lazy(()=>import( "./components/Grocery"))
+
 
 
 
@@ -33,10 +37,11 @@ import RestaurantsMenu from "./components/RestaurantsMenu";
 
 
 const AppLayout = () => {
+  const onlineStatus = useOnlineStatus();
   return (
     <div className="app">
       <Header />
-      <Outlet/>
+      {onlineStatus===false? <h1> No Internet Connection !!</h1>:<Outlet/>}
     </div>
   );
 };
@@ -61,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/restaurants/:resId",
         element: <RestaurantsMenu/>
+      },
+      {
+        path: "/grocery", 
+        element: <Suspense fallback={<h1>Page Loading</h1>} ><Grocery/></Suspense>
       }
     ],
     errorElement: <ErrorPage />,

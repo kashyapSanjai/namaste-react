@@ -1,4 +1,4 @@
-React Hooks - normal javascript function which is utility functon which gives some utility
+React Hooks - normal javascript utility function which is utility functon which gives some utility
 Rendering-  whenever a state variable update react re-render our component
 
 Reconciliation aka react fiber - came in react 16th this algo new algo come up its a new way to find diff and updating a dom 
