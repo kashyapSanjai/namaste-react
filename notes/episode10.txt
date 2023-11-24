@@ -1,0 +1,33 @@
+styling - to styling component we will use following method in react
+ - normal css
+ - scss/sass
+ - styled component
+ - material ui/Bootstrap/Chakra ui/ant design
+ - tailwind
+
+ tailwind - rapidly build modern website without loosing your html.its work with react/angular/normal html-css
+
+ post css - post css is a tool to transforming css with  javascript and tailwind use this post css
+
+1. install tailwind in react
+    - npm install -D tailwindcss
+    - npx tailwindcss init
+
+2. replcase code with below in tailwind-config.css
+/*
+content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+
+***/
+
+3. create .postcssrc in root dir and add this 
+/*
+{
+    "plugins":{
+        "tailwindcss":{}
+    }
+}
+**/

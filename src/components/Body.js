@@ -30,23 +30,23 @@ const fetchData = async ()=>{
     if(restaurantList?.length===0)return <Simmer/>;
     return (
       <div className="body">
-        <div className="filter">
-          <div className="search">
-            <input type="text" name="" className="search-box" placeholder="Search" value={searchText} onChange={(e)=>{
+        <div className="filter flex">
+          <div className="search m-4 p-4">
+            <input type="text" name="" className="py-2 px-2 search-box border border-solid border-gray-400  border-rounded" placeholder="Search" value={searchText} onChange={(e)=>{
               setSearchText(e.target.value)
             }}/>
-            <button type="button" onClick={()=>{
+            <button type="button" className="px-4 m-4  py-1 bg-green-200 rounded-lg border border-solid border-green-600" onClick={()=>{
               // fetchData();
               let searchedValue = restaurantList.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
               setFilteredRestaurantList(searchedValue);
               console.log(restaurantList)
             }}>Search</button>
           </div>
-          <div className="filtered-div">
-              <button type="button" className="top-rated-btn" onClick={() => filteredData()}>Top rated Restaurant</button>  
+          <div className="filtered-div my-4 p-3 flex items-center">
+              <button type="button" className="top-rated-btn px-4  py-2  bg-blue-200 rounded-lg" onClick={() => filteredData()}>Top rated Restaurant</button>  
           </div>
         </div>
-        <div className="restro-container">
+        <div className="restro-container flex flex-wrap">
           {
             filteredRestaurantList?.map((restaurantData)=>
             <Link key={restaurantData?.info?.id} to={`/restaurants/${restaurantData?.info?.id}`}><RestaurantCard restaurantInfo={restaurantData} /></Link>

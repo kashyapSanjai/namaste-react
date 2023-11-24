@@ -1,15 +1,15 @@
 import React,{lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
-import Body from "./components/Body";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
 import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
-import Contact from "./components/Contact";
-import About from "./components/About";
-import ErrorPage from "./components/ErrorPage";
-import RestaurantsMenu from "./components/RestaurantsMenu";
-import useOnlineStatus from "./utility/useOnlineStatus";
-// import Grocery from "./components/Grocery";
-const Grocery = lazy(()=>import( "./components/Grocery"))
+import Contact from "./src/components/Contact";
+import About from "./src/components/About";
+import ErrorPage from "./src/components/ErrorPage";
+import RestaurantsMenu from "./src/components/RestaurantsMenu";
+import useOnlineStatus from "./src/utility/useOnlineStatus";
+// import Grocery from "./src/components/Grocery";
+const Grocery = lazy(()=>import( "./src/components/Grocery"))
 
 
 

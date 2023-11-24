@@ -1,4 +1,8 @@
-.header{    
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .header{    
     display: flex;
     justify-content: space-between;
     border: solid 1px;
@@ -18,7 +22,6 @@ img{
 .rest-card{
     padding:10px;
     width: 200px;
-    /* height: 300px; */
     background-color: #f0f0f0;
     margin: 5px;
 }
@@ -63,4 +66,4 @@ img{
 .member-card{
     padding:10px;
     border: solid 1px;
-}
+} */
