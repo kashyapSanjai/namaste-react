@@ -5,5 +5,5 @@ how ui look like by using data or using config and this config came from backend
 note - my treadmap develop using config driven ui
 
 3. key - in react looping/map always use key beacause without key react rerender all the things inside a loop when list modified but if we used key then every element uniquly identified so only newly added element is rerender in list not all thats why we'll alwayshave to use key.
-note - react itself says dont use index as a key try to unique id from api data use index only that condition if api da6a does't have unique key
+note - react itself says dont use index as a key try to unique id from api data use index only that condition if api data does't have unique key
 not using keys(not acceptable) <<<<<index as key <<<<<< unique id(best practise)

@@ -5,7 +5,7 @@ monolith - written all code in same project like
     d.db connection
     e. sms sending
     f. email notification
-in monolith apps if we make single changes like change only button color so we also have to complie/deploywhole project
+in monolith apps if we make single changes like change only button color so we also have to complie/deploy whole project
 
 
 microservices - in this architecture we have different serviced for different job

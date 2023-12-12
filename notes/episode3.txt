@@ -1,7 +1,7 @@
 npm start = npm run start (both are same)
 jsx - jsx is javascript syntax which is easier to create react element jsx is html like syntax and its not html inside javascript. 
 jsx is not a part of react so we can also write react without jsx
-jsx is not valid pure javascript js engine does not understand the jsx beacuse js engine only understand all version of ECMAcript
+jsx is not valid pure javascript cause js engine does not understand the jsx beacuse js engine only understand all version of ECMAcript
 so how jsx working? its beacause parcel means code before reaches to js engine it is transpiled then js engine receives code that browser/react can understand  
 this transpilation done by babel 
 in jsx we neet use cammelcase to use attributes

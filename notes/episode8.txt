@@ -1,4 +1,4 @@
-Class components - its a normal javascript class and class base component are older way of creating components but in modern react we use only class base components. class compone ts has a render method which can return some jsx
+Class components - its a normal javascript class and class base component are older way of creating components but in modern react we use only functional base components. class componets has a render method which can return some jsx
 
 
 Class component lifecycle - it has 2 phase for class component life cycle
@@ -31,7 +31,7 @@ React class component lifecycle priorty with nested component
 React Functional Component life cycle
 -----------------------------------------
 useEffect(()=>{
-    console.log("trigger when component didmount initialy")
+    console.log("trigger when component's initial load")
 },[])
 
 useEffect(()=>{
