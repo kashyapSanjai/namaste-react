@@ -1,0 +1,8 @@
+Higher Order Function - Higher order component is a function that takes a component and return a component. it takes component as input and enhance and add some extra feature in it and return it back
+
+pure component - 
+
+controled and uncontroled component 
+
+state lifting up
+

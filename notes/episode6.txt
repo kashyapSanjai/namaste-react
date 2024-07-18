@@ -23,7 +23,7 @@ note - incomparison of monolith apps microservices has different deplyment proce
 
 useEffect - when the component rendered it and as soon as rendered  cycle is finished it will call this callback function
 after every render of component useeffect called
-    a.if no depenedecy array it call on every component rendered 
+    a.if no depenedecy array it call on every renderes of componenet
     b.if empty depenedecy array then useeffect called on initial render only once when component rendered first time
     c. if having depenedecy then it called every time when depenedecy changed
 

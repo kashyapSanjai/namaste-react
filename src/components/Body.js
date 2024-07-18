@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import {resObj} from "../utility/mockData"
-import RestaurantCard from "./RestaurantCard"
+import RestaurantCard,{withDiscountedLabel} from "./RestaurantCard"
 import Simmer from "./Simmer"
 import { Link } from "react-router-dom"
 import { RESTAURANT_LIST } from "../utility/constants"
@@ -10,6 +10,7 @@ const Body = ()=>{
 const [restaurantList, setRestaurantList] = useState([]);
 const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
 const [searchText, setSearchText] = useState([]);
+const DiscountedPriceRestaurant = withDiscountedLabel(RestaurantCard);
 
 function filteredData(){
     let filteredList = restaurantList?.filter((res)=>res?.info.avgRating>4.1)
@@ -23,11 +24,11 @@ useEffect(()=>{
 const fetchData = async ()=>{
   const data = await fetch(RESTAURANT_LIST);
   const json = await data.json();
-  setRestaurantList(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-  setFilteredRestaurantList(json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  setRestaurantList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  setFilteredRestaurantList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 }
 
-    if(restaurantList?.length===0)return <Simmer/>;
+    if(restaurantList?.length==0)return <Simmer/>;
     return (
       <div className="body">
         <div className="filter flex">
@@ -49,7 +50,9 @@ const fetchData = async ()=>{
         <div className="restro-container flex flex-wrap">
           {
             filteredRestaurantList?.map((restaurantData)=>
-            <Link key={restaurantData?.info?.id} to={`/restaurants/${restaurantData?.info?.id}`}><RestaurantCard restaurantInfo={restaurantData} /></Link>
+            <Link key={restaurantData?.info?.id} to={`/restaurants/${restaurantData?.info?.id}`}>
+              {restaurantData?.info?.hasOwnProperty('aggregatedDiscountInfoV3')?<DiscountedPriceRestaurant restaurantInfo={restaurantData} />:<RestaurantCard restaurantInfo={restaurantData} />}
+              </Link>
             )
           }
         </div>

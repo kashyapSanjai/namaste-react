@@ -4,7 +4,7 @@ const useRestaurantMenu = (resId) => {
     const [resInfo,setResInfo] = useState(null);
     useEffect(()=>{
         fetchApi()
-    })
+    },[])
     async function fetchApi(){
         console.log("fetch api calling");
         let resp = await fetch(MENU_API+resId);
