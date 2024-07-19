@@ -1,4 +1,4 @@
-import React,{lazy,Suspense} from "react";
+import React,{lazy,Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./src/components/Header";
 import Body from "./src/components/Body";
@@ -8,6 +8,7 @@ import About from "./src/components/About";
 import ErrorPage from "./src/components/ErrorPage";
 import RestaurantsMenu from "./src/components/RestaurantsMenu";
 import useOnlineStatus from "./src/utility/useOnlineStatus";
+import UserContext from "./src/utility/UserContext";
 // import Grocery from "./src/components/Grocery";
 const Grocery = lazy(()=>import( "./src/components/Grocery"))
 
@@ -38,10 +39,23 @@ const Grocery = lazy(()=>import( "./src/components/Grocery"))
 
 const AppLayout = () => {
   const onlineStatus = useOnlineStatus();
+  const [userInfo,setUserInfo] = useState();
+
+  useEffect(()=>{
+    const data = {
+      loggedInUser:"Sanjay Kashyap"
+    }
+    setUserInfo(data.loggedInUser);
+  },[])
   return (
     <div className="app">
-      <Header />
-      {onlineStatus===false? <h1> No Internet Connection !!</h1>:<Outlet/>}
+        <UserContext.Provider value={{loggedInUser:userInfo,setUserInfo}}>
+        {/* <UserContext.Provider value={{loggedInUser:"Hello"}}> */}
+        <Header />
+        {/* </UserContext.Provider> */}
+
+        {onlineStatus===false? <h1> No Internet Connection !!</h1>:<Outlet/>}
+        </UserContext.Provider>
     </div>
   );
 };

@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState,useContext } from "react"
 import {resObj} from "../utility/mockData"
 import RestaurantCard,{withDiscountedLabel} from "./RestaurantCard"
 import Simmer from "./Simmer"
 import { Link } from "react-router-dom"
 import { RESTAURANT_LIST } from "../utility/constants"
+import UserContext from "../utility/UserContext"
 
 
 const Body = ()=>{
 const [restaurantList, setRestaurantList] = useState([]);
 const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
 const [searchText, setSearchText] = useState([]);
+const {loggedInUser,setUserInfo} = useContext(UserContext);
 const DiscountedPriceRestaurant = withDiscountedLabel(RestaurantCard);
 
 function filteredData(){
@@ -47,6 +49,10 @@ const fetchData = async ()=>{
           <div className="filtered-div my-4 p-3 flex items-center">
               <button type="button" className="top-rated-btn px-4  py-2  bg-blue-200 rounded-lg" onClick={() => filteredData()}>Top rated Restaurant</button>  
           </div>
+          <div className="filtered-div my-4 p-3 flex items-center">
+            <label htmlFor="">User Name</label>
+            <input type="text" name="" className="mx-2 py-2 px-2 search-box border border-solid border-gray-400  border-rounded" placeholder="User Name" value={loggedInUser} onChange={(e)=>{setUserInfo(e.target.value)}}/>
+        </div>
         </div>
         <div className="restro-container flex flex-wrap">
           {

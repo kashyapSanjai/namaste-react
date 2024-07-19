@@ -1,8 +1,12 @@
-import {CARD_IMAGE_BASE_URL} from "../utility/constants"
+import { useContext } from "react";
+import {CARD_IMAGE_BASE_URL} from "../utility/constants";
+import UserContext from "../utility/UserContext";
 const RestaurantCard = (props) => {
   console.log("sfsfdsf",props?.restaurantInfo?.info);
     const {resData} = props
     const {name,cuisines,avgRating,costForTwo,cloudinaryImageId,sla} = props?.restaurantInfo?.info;
+
+    const {loggedInUser} = useContext(UserContext);
     return(
      <>
       <div className="rest-card p-4 m-4 w-[300px] h-[450px] rounded-lg bg-gray-200 hover:bg-gray-300">
@@ -12,6 +16,7 @@ const RestaurantCard = (props) => {
         <h4>{avgRating}</h4>
         <h4>{costForTwo}</h4>
         <h4>{sla?.slaString} min</h4>
+        <h4>User: {loggedInUser}</h4>
       </div>
      </>
     )
