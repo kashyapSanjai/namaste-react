@@ -8,3 +8,18 @@ we use something knows as selector  which we will use to read data from store an
 
 notes: you can also refer this image to understand the flow
 "Screenshot from 2024-07-19 11-39-26.png"
+
+
+in core redux we can not directly chnage the state so we hae to mutate the state and return new state but in redux toolkit we can directly modify the state inside the reducer function and also there is no need to return.
+Note:- behind the redux state update there is 'immer ui liabrary' which current and previos state and find the difference and return updated new state.
+
+
+redux devTools
+====================
+use redux dev tools chrome extension to track redux activity in page
+https://chromewebstore.google.com/detail/lmhkpmbekcpmknklioeibfkpmmfibljd
+
+
+RTK query
+====================
+also read and practise about redux toolkit query which is use to api call in reux toolkit(RTK query)
