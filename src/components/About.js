@@ -1,6 +1,8 @@
 import React from "react";
 import Member from "./Member";
 import MemberClass from "./MemberClass";
+import UserContext from "../utility/UserContext";
+
 class About extends React.Component{
     constructor(props){
         super(props)
@@ -15,6 +17,12 @@ class About extends React.Component{
         return (
             <div>
                 <h2>This is About component</h2>
+                <div>
+                    LoggedIn User
+                    <UserContext.Consumer>
+                        {({loggedInUser})=><h1 className="font-bold">{loggedInUser}</h1>}
+                    </UserContext.Consumer>
+                </div>
                 {/* <Member /> */}
                 <MemberClass name={"sanjay (Class)"} location = {"lucknow (Class)"}/>
                 {/* <MemberClass name={"ajay (Class)"} location = {"punjab (Class)"}/>

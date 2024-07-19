@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import {HEADER_LOGO} from "../utility/constants"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utility/useOnlineStatus";
+import UserContext from "../utility/UserContext";
 
 const Header = () => {
 const [buttonText, setButtontext] = useState("Login");
 const onlineStatus = useOnlineStatus();
+const {loggedInUser} = useContext(UserContext);
 
 
     return (
@@ -25,6 +27,7 @@ const onlineStatus = useOnlineStatus();
             <li className="px-4"><Link to="/grocery">Grocery</Link></li>
             <li className="px-4">Cart</li>
             <button type="button" className="auth-button">{buttonText}</button>
+            <li className="px-4">{loggedInUser}</li>
           </ul>
         </div>
       </div>
