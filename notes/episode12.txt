@@ -1,0 +1,10 @@
+write data on redux store
+==========================
+when you hit add button its dispatches an action and which calls the reducer function and this reducer function update the slice of redux store
+
+read data from redux store
+==========================
+we use something knows as selector  which we will use to read data from store and the selectpr modify or react component and whole the process called the "subscribing to the store" which means sync with store means if data on store changes my data on component updated automatically as soon as my store changes
+
+notes: you can also refer this image to understand the flow
+"Screenshot from 2024-07-19 11-39-26.png"
