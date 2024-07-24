@@ -11,7 +11,14 @@ const [buttonText, setButtontext] = useState("Login");
 const onlineStatus = useOnlineStatus();
 const {loggedInUser} = useContext(UserContext);
 const cartItems = useSelector((store)=>store.cart.items)
-console.log("redux",cartItems)
+// console.log("redux",cartItems)
+const handleClick = ()=>{
+  if(buttonText=="Login"){
+    setButtontext("Logout")
+  }else{
+    setButtontext("Login")
+  }
+}
 
 
     return (
@@ -30,7 +37,7 @@ console.log("redux",cartItems)
             <li className="px-4"><Link to="/contact-us">Contact</Link></li>
             <li className="px-4"><Link to="/grocery">Grocery</Link></li>
             <li className="px-4 font-bold text-xl"><Link to="/cart">Cart ({cartItems.length} Items)</Link></li>
-            <button type="button" className="auth-button">{buttonText}</button>
+            <button type="button" className="auth-button" onClick={()=>handleClick()}>{buttonText}</button>
             <li className="px-4">{loggedInUser}</li>
           </ul>
         </div>
