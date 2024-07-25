@@ -1,34 +1,34 @@
-type of tsting for developer
+type of testing for developer
 
 1. unit testing
 ===================
 you test your react component in isolation means you test your small unit of your application not the entire application called unit testing
-example:- if you want test only heade component then there wil uhnit testing for header component
+example:- if you want test only header component then there will unit testing for header component
 
 2. integration testing
 ========================
-teing the integration of the componentmeans if there is a big large applicain there are s many components and these componentmeans talks to each other also called testig feature for example tere is searcg function ality then i have to do integration tesing for search where searcg button in put filed an item component will affect
+thing the integration of the component means if there is a big large application there are s many components and these component means talks to each other also called testing feature for example there is search functionality then i have to do integration testing for search where search button in put filed an item component will affect
 
-3. End to End tesing (e2e tesing)
+3. End to End testing (e2e testing)
 ==================================
 testing whole app  like from where user login page  to react app to logout react app
 
 all the testing libraries base is DOM testing library
-if we install react using create react app then a test library auto installed but if manualy insta react like parcel,react-router ,  react other parts one by one then we will have to install a testign liabrary also
+if we install react using create react app then a test library auto installed but if manually react like parcel,react-router ,  react other parts one by one then we will have to install a testing library also
 
-we need to both react testing lirary(RTL) and jest library in ourproject 
+we need to both react testing library(RTL) and jest library in our project 
 
-Setting up testing enviourment in our react app
-    - (intall RTL) npm i -D @testing-library/react
+Setting up testing environment in our react app
+    - (install RTL) npm i -D @testing-library/react
     - (install jest) npm i -D jest
     - (install babel dependencies) npm install --save-dev babel-jest @babel/core @babel/preset-env
     - configue babel
     - configure parcel config file to disable default babel transpilation by creating .parcelrc file
-    - c(onfgure jest) npx jest --init
-    - (install  jestDOM library) npm install --save-dev @testing-libr   ary/jest-dom
-    - (install jsdom envioremnt) npm install --save-dev jest-environment-jsdom
+    - (configure jest) npx jest --init
+    - (install  jestDOM library) npm install --save-dev @testing-library/jest-dom
+    - (install jsdom environment) npm install --save-dev jest-environment-jsdom
 
 
-JSDOM-when you ru test cases so there is no server running and there is no broweser so they will need a enviourment to run test cases will be execueted so here JSDOM comes n picture 
+JSDOM-when you ru test cases so there is no server running and there is no broweser so they will need a environment to run test cases will be executed so here JSDOM comes n picture 
 
 JSDOM is a library which parses and interacts with assembled HTML just like browser so all the the testing code runs over here

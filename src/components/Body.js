@@ -25,7 +25,7 @@ useEffect(()=>{
 
 const fetchData = async ()=>{
   const data = await fetch(RESTAURANT_LIST);
-  console.log("hello",data);
+  // console.log("hello",data);
   const json = await data.json();
   setRestaurantList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   setFilteredRestaurantList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -36,14 +36,14 @@ const fetchData = async ()=>{
       <div className="body">
         <div className="filter flex">
           <div className="search m-4 p-4">
-            <input type="text" name="" className="py-2 px-2 search-box border border-solid border-gray-400  border-rounded" placeholder="Search" value={searchText} onChange={(e)=>{
+            <input type="text" data-testid="search-input" name="" className="py-2 px-2 search-box border border-solid border-gray-400  border-rounded" placeholder="Search" value={searchText} onChange={(e)=>{
               setSearchText(e.target.value)
             }}/>
             <button type="button" className="px-4 m-4  py-1 bg-green-200 rounded-lg border border-solid border-green-600" onClick={()=>{
               // fetchData();
               let searchedValue = restaurantList.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
               setFilteredRestaurantList(searchedValue);
-              console.log(restaurantList)
+              // console.log(restaurantList)
             }}>Search</button>
           </div>
           <div className="filtered-div my-4 p-3 flex items-center">
@@ -56,12 +56,15 @@ const fetchData = async ()=>{
         </div>
         <div className="restro-container flex flex-wrap">
           {
-            filteredRestaurantList?.map((restaurantData)=>
+            filteredRestaurantList?.map((restaurantData)=>(
             <Link key={restaurantData?.info?.id} to={`/restaurants/${restaurantData?.info?.id}`}>
-              {restaurantData?.info?.hasOwnProperty('aggregatedDiscountInfoV3')?<DiscountedPriceRestaurant restaurantInfo={restaurantData} />:<RestaurantCard restaurantInfo={restaurantData} />}
-              </Link>
-            )
-          }
+              {restaurantData?.info?.hasOwnProperty('aggregatedDiscountInfoV3') ? (
+                <DiscountedPriceRestaurant restaurantInfo={restaurantData?.info} />
+              ):(
+               <RestaurantCard restaurantInfo={restaurantData?.info} />
+              )}
+            </Link>
+          ))}
         </div>
       </div>
     )
