@@ -1,5 +1,5 @@
 import { CARD_IMAGE_BASE_URL } from "../utility/constants";
-import myImage from '../../dummy.jpg';
+// import myImage from '../../dummy.jpg';
 import { addItem } from "../utility/cartSlice";
 import { useDispatch } from "react-redux";
 
@@ -15,6 +15,7 @@ const ItemList = ({items})=>{
             {items.map((item)=>{
                     return (
                         <div 
+                        data-testid="food-items"
                         key={item.card.info.id} 
                         className="p-2 m-2 border-gray-400  border-b-2 text-left flex justify-between"
                         >
@@ -30,7 +31,9 @@ const ItemList = ({items})=>{
                                 <div className=" absolute">
                                     <button className="p-2 mx-11 rounded-lg  bg-black text-white shadow-lg m-auto" onClick={()=>handleClick(item)}> Add+</button>
                                 </div>
-                                {item.card.info.imageId?<img className="w-full" src={CARD_IMAGE_BASE_URL+item.card.info.imageId} alt="no image" />:<img className="w-full" src={myImage} alt="sfsfsfd" />}
+                                {item.card.info.imageId?<img className="w-full" src={CARD_IMAGE_BASE_URL+item.card.info.imageId} alt="no image" />:
+                                // <img className="w-full" src={myImage} alt="sfsfsfd" />}
+                                <img className="w-full" src={"myImage"} alt="sfsfsfd" />}
                             </div>
                         </div>
                     )
